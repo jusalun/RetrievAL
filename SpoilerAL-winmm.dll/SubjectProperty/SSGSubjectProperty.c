@@ -41,10 +41,11 @@ TSSGSubjectProperty * __fastcall GrowSubjectProperty(DWORD *lpdwIndex)
 				prop = SubjectProperty;
 			else
 			{
-				prop = (TSSGSubjectProperty *)HeapReAlloc(hHeap, HEAP_ZERO_MEMORY, SubjectProperty, sizeof(TSSGSubjectProperty) * (Allocation <<= 1));
+				prop = (TSSGSubjectProperty *)HeapReAlloc(hHeap, HEAP_ZERO_MEMORY, SubjectProperty, sizeof(TSSGSubjectProperty) * (Allocation << 1));
 				if (prop == NULL)
 					break;
 				SubjectProperty = prop;
+				Allocation <<= 1;
 			}
 		}
 		else

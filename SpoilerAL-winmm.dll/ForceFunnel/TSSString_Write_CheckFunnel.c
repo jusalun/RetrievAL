@@ -31,7 +31,8 @@ __declspec(naked) void __cdecl TSSString_Write_CheckFunnel()
 		push    eax
 		push    edx
 		push    ecx
-		jmp     CheckFunnel
+		call    CheckFunnel
+		ret
 
 		#undef Str
 		#undef SSGS
